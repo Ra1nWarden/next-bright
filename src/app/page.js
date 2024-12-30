@@ -2,6 +2,16 @@ import React from "react";
 import CodeSnippet from "../components/CodeSnippet/CodeSnippet";
 import { Code } from "bright";
 
+function CodeBlock({ code }) {
+  return (
+    <CodeSnippet>
+      <Code className="code-snippet" theme="dracula" lang="py">
+        {code}
+      </Code>
+    </CodeSnippet>
+  );
+}
+
 function Home() {
   return (
     <main>
@@ -14,23 +24,14 @@ function Home() {
         assign.
       </p>
 
-      <CodeSnippet>
-        <Code className="code-snippet" theme="dracula" lang="py">
-          {FIRST_SNIPPET}
-        </Code>
-      </CodeSnippet>
+      <CodeBlock code={FIRST_SNIPPET} />
 
       <h2>Control Flow: Conditionals and Loops</h2>
       <p>
         Python has standard control flow structures like if statements, for and
         while loops.
       </p>
-
-      <CodeSnippet>
-        <Code className="code-snippet" theme="dracula" lang="py">
-          {SECOND_SNIPPET}
-        </Code>
-      </CodeSnippet>
+      <CodeBlock code={SECOND_SNIPPET} />
 
       <h2>Functions and Basic Data Structures</h2>
 
@@ -38,12 +39,7 @@ function Home() {
         In Python, you can define your own functions using the def keyword.
         Python also has built-in data structures like lists and dictionaries.
       </p>
-
-      <CodeSnippet>
-        <Code className="code-snippet" theme="dracula" lang="py">
-          {THIRD_SNIPPET}
-        </Code>
-      </CodeSnippet>
+      <CodeBlock code={THIRD_SNIPPET} />
     </main>
   );
 }
